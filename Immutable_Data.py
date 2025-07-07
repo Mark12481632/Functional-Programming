@@ -1,6 +1,7 @@
 # Functional Programming using Immutable Data.
+# To "get an idea" about it.
 
-import collections
+from typing import NamedTuple
 
 def print_scientists(scientists):
     for scientist in scientists:
@@ -26,9 +27,12 @@ scientists[0]['name'] = "Linda Lovelace"
 print("2.")
 print_scientists(scientists)
 
-# Use "collections" to create imutable structures:
-Scientist = collections.namedtuple('Scientist', 
-                                   ['name', 'field', 'born', 'nobel'])
+# Use NamedTuple to create imutable structures:
+class Scientist(NamedTuple):
+    name: str
+    field: str
+    born: int
+    nobel: bool
 
 ada = Scientist(name='Ada Lovelace', field='math', born=1815, nobel=False)
 print(ada)

@@ -1,10 +1,14 @@
 # Functional Programming using Map, Reduce and Filter.
+# To "get an idea" about it.
 
-import collections
+from typing import NamedTuple
 
 # Use "collections" to create imutable structures:
-Scientist = collections.namedtuple('Scientist', 
-                                   ['name', 'field', 'born', 'nobel'])
+class Scientist(NamedTuple):
+    name: str
+    field: str
+    born: int
+    nobel: bool
 
 # To ensure everything is immutable:
 scientists = (Scientist(name='Ada Lovelace', field='math', born=1815, nobel=False),
